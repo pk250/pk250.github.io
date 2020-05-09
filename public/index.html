@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -92,7 +92,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -186,62 +186,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
           </a>
         </li>
       
@@ -283,7 +233,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaogs">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/xiaogs.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -331,6 +281,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -349,82 +318,77 @@
       
         
           
-            <p><strong>嵌入式工程师的0x10个问题</strong></p>
-<p>1、用预处理指令#define声明一个常数，用以表示一年中有多少秒</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SECONDS_PER_YEAR (60 * 60 * 24 * 365)UL</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>#define语法的基本知识，不能以分号结尾</li>
-<li>懂得预处理器将计算常数表达式的值</li>
-<li>这个值在16位中将溢出</li>
-</ul>
-<p>2、写一个标准宏MIN，这个宏输入两个参数并返回较小的一个</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MIN(A,B) ((A)&lt;=(B)?(A):(B))</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>标识#define在宏中应用的基本知识。这是很重要的，因为直到嵌入(inline)操作符变为标准C的一部分，宏是方便产生嵌入代码的唯一方法，对于嵌入式系统来说，为了能达到要求的性能，嵌入代码经常是必须的方法。</p>
-</li>
-<li><p>三重条件操作符的知识。这个操作符存在C语言中的原因是它使得编译器能产生比if-then-else更优化的代码，了解这个用法是很重要的；</p>
-</li>
-<li><p>懂得在宏中小心地把参数用括号括起来</p>
-</li>
-<li><p>我也用这个问题开始讨论宏的副作用，例如：当你写下面的代码时会发生什么事？</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">least = MIN(*p++, b);</span><br></pre></td></tr></table></figure>
+          嵌入式工程师的0x10个问题
+1、用预处理指令#define声明一个常数，用以表示一年中有多少秒
+1#define SECONDS_PER_YEAR (60 * 60 * 24 * 365)UL
 
 
-</li>
-</ul>
-<p>3、用变量a给出以下定义</p>
-<ul>
-<li><p>​    一个整型变量</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>​    一个指向整型数的指针</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *a;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个指向指针的指针，它的指针是指向一个整型数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> **a;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个10个整型数的数组</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个有10个指针的数组，该指针是指向一个整型数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *a[<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个指向有10个整型数数组的指针</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> (*a)[<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个指向函数的指针，该函数有一个整型参数并返回一个整数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> (*a)(<span class="keyword">int</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一个有10个指针的数组，该指针指向一个函数，该函数有一个整型参数并返回一个整数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> (*a[<span class="number">10</span>])(<span class="keyword">int</span>);</span><br></pre></td></tr></table></figure>
+#define语法的基本知识，不能以分号结尾
+懂得预处理器将计算常数表达式的值
+这个值在16位中将溢出
 
-</li>
-</ul>
-<p>4、static关键字有什么用？</p>
-<ul>
-<li>在函数内，一个被声明为静态的变量在这一涵数被调用过程中维持其值不变</li>
-<li>在模块内(但在函数体外)，一个被声明为静态的变量可以被模块内所有函数所访问，不能被模块外其它函数访问，模块内全局变量。</li>
-<li>在模块内用作函数的定义，声明该函数为静态函数，只可被该模块内函数调用。</li>
-</ul>
-<p>5、const关键字有什么用？</p>
-<ul>
-<li><p>只读、常数</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> a;<span class="comment">//一个常整型数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> a;<span class="comment">//一个常整型数</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *a;<span class="comment">//指向常整型数的指针</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> a;<span class="comment">//指向整型数的常指针</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="keyword">const</span> * a <span class="keyword">const</span>;<span class="comment">//一个指向常整型数的常指针</span></span><br></pre></td></tr></table></figure>
+2、写一个标准宏MIN，这个宏输入两个参数并返回较小的一个
+1#define MIN(A,B) ((A)&lt;=(B)?(A):(B))
 
-</li>
-</ul>
-<p>6、volatile关键字有什么用？</p>
-<p>​    一个定义为volatile的变量表明该变量可能会意向不到的被改变，处理器每次通过地址读取该值而不是通过寄存器的拷贝值。</p>
-<p><em>常用在：</em></p>
-<ul>
-<li>并行设备的硬件寄存器</li>
-<li>中断服务子程序中会访问到的非自动变量</li>
-<li>多线程中被多个任务共享的变量</li>
-</ul>
 
-          
+标识#define在宏中应用的基本知识。这是很重要的，因为直到嵌入(inline)操作符变为标准C的一部分，宏是方便产生嵌入代码的唯一方法，对于嵌入式系统来说，为了能达到要求的性能，嵌入代码经常是必须的方法。
+
+三重条件操作符的知识。这个操作符存在C语言中的原因是它使得编译器能产生比if-then-else更优化的代码，了解这个用法是很重要的；
+
+懂得在宏中小心地把参数用括号括起来
+
+我也用这个问题开始讨论宏的副作用，例如：当你写下面的代码时会发生什么事？
+1least = MIN(*p++, b);
+
+
+
+
+3、用变量a给出以下定义
+
+​    一个整型变量
+1int a;
+
+​    一个指向整型数的指针
+1int *a;
+
+一个指向指针的指针，它的指针是指向一个整型数
+1int **a;
+
+一个10个整型数的数组
+1int a[10];
+
+一个有10个指针的数组，该指针是指向一个整型数
+1int *a[10];
+
+一个指向有10个整型数数组的指针
+1int (*a)[10];
+
+一个指向函数的指针，该函数有一个整型参数并返回一个整数
+1int (*a)(int);
+
+一个有10个指针的数组，该指针指向一个函数，该函数有一个整型参数并返回一个整数
+1int (*a[10])(int);
+
+
+
+4、static关键字有什么用？
+
+在函数内，一个被声明为静态的变量在这一涵数被调用过程中维持其值不变
+在模块内(但在函数体外)，一个被声明为静态的变量可以被模块内所有函数所访问，不能被模块外其它函数访问，模块内全局变量。
+在模块内用作函数的定义，声明该函数为静态函数，只可被该模块内函数调用。
+
+5、const关键字有什么用？
+
+只读、常数
+123456789const int a;//一个常整型数int const a;//一个常
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/08/C%E8%AF%AD%E8%A8%80/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -476,7 +440,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaogs">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/xiaogs.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -524,6 +488,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -542,10 +525,15 @@
       
         
           
-            <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu:bionic</span><br><span class="line"></span><br><span class="line"><span class="keyword">MAINTAINER</span> The LiCheePi environment &lt;xiaogsblog@gmail.com&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> sources.list /etc/apt/sources.list</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get upgrade \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get update \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y apt-utils \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y lib32z1 \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y lib32ncurses5 \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y vim \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y make \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y gcc \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y ncurses-dev \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y bison \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y flex \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y bc \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y swig \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y libssl-dev \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y unzip \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y g++ \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y patch \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y wget \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y cpio \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y rsync \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y git \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y python \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y python-dev</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">ENV</span> ARCH arm</span><br><span class="line"><span class="keyword">ENV</span> CROSS_COMPILE arm-linux-gnueabi-</span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"arm-linux-gnueabi-gcc"</span>,<span class="string">"-v"</span>]</span></span><br></pre></td></tr></table></figure>
-
-
-          
+          12345678910111213141516171819202122232425262728293031323334FROM ubuntu:bionicMAINTAINER The LiCheePi environment &lt;xiaogsblog@gmail.com&gt;ADD sources.list /etc/apt/sources.listRUN apt-get upgrade \	&amp;&amp; apt-get update \	&amp;&amp; apt-get install -y apt-utils \	&amp;&amp; apt-get install -y lib32z1 \	&amp;&amp; apt-get install -y lib32ncurses5 \	&amp;&amp; apt-get install -y vim \	&amp;&amp; apt-get install -y make \	&amp;&amp; apt-get install -y gcc \	&amp;&amp; apt-get install -y ncurses-dev \	&amp;&amp; apt-get install -y bison \	&amp;&amp; apt-get install -y flex \	&amp;&amp; apt-get install -y bc \	&amp;&amp; apt-get install -y swig \	&amp;&amp; apt-get install -y libssl-dev \	&amp;&amp; apt-get install -y unzip \	&amp;&amp; apt-get install -y g++ \	&amp;&amp; apt-get install -y patch \	&amp;&amp; apt-get install -y wget \	&amp;&amp; apt-get install -y cpio \	&amp;&amp; apt-get install -y rsync \	&amp;&amp; apt-get install -y git \	&amp;&amp; apt-get install -y python \	&
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/08/%E8%8D%94%E6%9E%9D%E6%B4%BEnone%E7%9A%84Docker%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -597,7 +585,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaogs">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/xiaogs.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -645,6 +633,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -663,10 +670,15 @@
       
         
           
-            <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu:bionic</span><br><span class="line"></span><br><span class="line"><span class="keyword">MAINTAINER</span> The OrangePi environment &lt;xiaogsblog@gmail.com&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> sources.list /etc/apt/sources.list</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y vim \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y unzip \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y bsdtar \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y mtools \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y u-boot-tools \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y pv \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y bc \</span></span><br><span class="line"><span class="bash">    &amp;&amp; apt-get install -y gcc \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y automake \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y make \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y curl \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y lib32z1 \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y lib32z1-dev \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y dosfstools \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y figlet \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y gcc-arm-linux-gnueabi \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y g++-arm-linux-gnueabi \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y device-tree-compiler \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y debootstrap \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y cpio</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">ENV</span> ARCH arm</span><br><span class="line"><span class="keyword">ENV</span> CROSS_COMPILE arm-linux-gnueabi-</span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"arm-linux-gnueabi-gcc"</span>,<span class="string">"-v"</span>]</span></span><br></pre></td></tr></table></figure>
-
-
-          
+          1234567891011121314151617181920212223242526272829303132FROM ubuntu:bionicMAINTAINER The OrangePi environment &lt;xiaogsblog@gmail.com&gt;ADD sources.list /etc/apt/sources.listRUN apt-get update \	&amp;&amp; apt-get install -y vim \	&amp;&amp; apt-get install -y unzip \	&amp;&amp; apt-get install -y bsdtar \	&amp;&amp; apt-get install -y mtools \	&amp;&amp; apt-get install -y u-boot-tools \	&amp;&amp; apt-get install -y pv \	&amp;&amp; apt-get install -y bc \    &amp;&amp; apt-get install -y gcc \	&amp;&amp; apt-get install -y automake \	&amp;&amp; apt-get install -y make \	&amp;&amp; apt-get install -y curl \	&amp;&amp; apt-get install -y lib32z1 \	&amp;&amp; apt-get install -y lib32z1-dev \	&amp;&amp; apt-get install -y dosfstools \	&amp;&amp; apt-get install -y figlet \	&amp;&amp; apt-get install -y gcc-arm-linux-gnueabi \	&amp;&amp; apt-get install -y g++-arm-linux-gnueabi \	&amp;&amp; apt-get install -y device-tree-compiler \	&amp;&amp; apt-get install -y debootstrap \	&amp;&amp; a
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/08/%E9%A6%99%E6%A9%99%E6%B4%BEzero%E7%9A%84Docker%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -718,7 +730,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaogs">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/xiaogs.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -766,6 +778,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -784,10 +815,17 @@
       
         
           
-            <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ubuntu:bionic</span><br><span class="line"></span><br><span class="line"><span class="keyword">MAINTAINER</span> The hexo environment &lt;xiaogsblog@gmail.com&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ADD</span><span class="bash"> sources.list /etc/apt/sources.list</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> apt-get update \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y git \</span></span><br><span class="line"><span class="bash">	&amp;&amp; apt-get install -y npm \</span></span><br><span class="line"><span class="bash">	&amp;&amp; npm install hexo -g \</span></span><br><span class="line"><span class="bash">	&amp;&amp; npm install hexo-deployer-git --save</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">4000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"hexo"</span>,<span class="string">"version"</span>]</span></span><br></pre></td></tr></table></figure>
+          123456789101112131415FROM ubuntu:bionicMAINTAINER The hexo environment &lt;xiaogsblog@gmail.com&gt;ADD sources.list /etc/apt/sources.listRUN apt-get update \	&amp;&amp; apt-get install -y git \	&amp;&amp; apt-get install -y npm \	&amp;&amp; npm install hexo -g \	&amp;&amp; npm install hexo-deployer-git --saveEXPOSE 4000CMD ["hexo","version"]
 
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/08/hexo%E7%9A%84DockerFile/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -839,7 +877,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaogs">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/xiaogs.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -887,6 +925,25 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
 
           
 
@@ -905,9 +962,16 @@
       
         
           
-            <p>第一章：Python的坑</p>
+          第一章：Python的坑
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/07/Python/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -976,6 +1040,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/xiaogs.jpg"
+                alt="xiaogs" />
+            
               <p class="site-author-name" itemprop="name">xiaogs</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -984,7 +1052,9 @@
 
             
               <div class="site-state-item site-state-posts">
-                <a href="/archives">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
                   <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
@@ -1000,11 +1070,41 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/pk250" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xiaogsblog@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiaogs.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -1036,15 +1136,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -1143,6 +1237,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 
